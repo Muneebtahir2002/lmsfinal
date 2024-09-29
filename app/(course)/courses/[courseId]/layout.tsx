@@ -58,10 +58,12 @@ import { CourseNavbar } from "./_components/course-navbar";
             <CoursesSidebar 
             course={course}
             progressCount={progressCount}
-            />
+            /> 
             </div>
             <main className="md:pl-80 pt-[80px] h-full">
+            
             {children}
+
             </main>
         </div>
     )

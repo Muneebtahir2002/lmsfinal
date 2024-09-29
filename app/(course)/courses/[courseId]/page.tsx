@@ -27,7 +27,6 @@ import { redirect } from "next/navigation";
         return redirect("/");
     }
 
-    
     return redirect(`/courses/${course.id}/chapters/${course.chapters[0].id}`)
 }
 
