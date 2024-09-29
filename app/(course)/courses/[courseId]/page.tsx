@@ -10,11 +10,13 @@ import { redirect } from "next/navigation";
         where:{
             id: params.courseId
         },
+
         include:{
             chapters:{
                 where:{
                     isPublished: true
                 },
+
                 orderBy:{
                     position:"asc"
                 }
@@ -25,6 +27,7 @@ import { redirect } from "next/navigation";
         return redirect("/");
     }
 
+    
     return redirect(`/courses/${course.id}/chapters/${course.chapters[0].id}`)
 }
 
