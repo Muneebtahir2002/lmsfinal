@@ -1,10 +1,9 @@
-import { authMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware } from "@clerk/nextjs/server";
 
-export default authMiddleware({
-  publicRoutes: ["/api/uploadthing", "/api/webhook"],
-  
+export default clerkMiddleware({
+  publicRoutes: ["/api/uploadthing", "/api/webhook"], // Public routes that do not require authentication
 });
 
 export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)","/","/(api|trpc)(.*)"],
+  matcher: ["/((?!_next|.*\\..*).*)", "/api/(.*)", "/trpc/(.*)"], // Protect all other routes except public ones
 };
